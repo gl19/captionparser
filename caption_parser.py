@@ -5,7 +5,7 @@ import os.path
 window = Tk()
 window.title("CaptionParse")
 window.geometry('500x600')
-window.iconbitmap('C:\\Users\\x4847\Desktop\\f\\caption-parser\\CP.ico')
+window.iconbitmap('CP.ico')
 window.filename = 'Please select a file'
 window.fileflag = False
 
