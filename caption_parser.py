@@ -5,7 +5,7 @@ import os.path
 window = Tk()
 window.title("CaptionParse")
 window.geometry('500x600')
-window.iconbitmap('CP.ico')
+window.iconbitmap('C:\\Users\\x4847\Desktop\\f\\caption-parser\\CP.ico')
 window.filename = 'Please select a file'
 window.fileflag = False
 
@@ -69,10 +69,10 @@ def select_file():
     window.filename = filedialog.askopenfilename(title="Select A File", filetypes=[("Supported files", ".srt .dfxp .txt"),("all files", ".*")])
     try:
         base, ext = os.path.splitext(window.filename)
-        if ext == ".txt":
+        if ext.lower() == ".txt":
             file_label.configure(text=window.filename)
             window.fileflag = True
-        elif ext == ".dfxp" or ext == ".srt":
+        elif ext.lower() == ".dfxp" or ext.lower() == ".srt":
             os.rename(window.filename, base + ".txt")
             file_label.configure(text=base + ".txt")
             window.filename = base + ".txt"
