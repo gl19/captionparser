@@ -66,13 +66,13 @@ def dfxp_parse():
         text_box.insert(END, "File not available or is unsupported")
 
 def select_file():
-    window.filename = filedialog.askopenfilename(title="Select A File", filetypes=[("Supported files", ".srt .dfxp .txt"),("all files", ".*")])
+    window.filename = filedialog.askopenfilename(title="Select A File", filetypes=[("Supported files", ".srt .dfxp .txt .xml"),("all files", ".*")])
     try:
         base, ext = os.path.splitext(window.filename)
         if ext.lower() == ".txt":
             file_label.configure(text=window.filename)
             window.fileflag = True
-        elif ext.lower() == ".dfxp" or ext.lower() == ".srt":
+        elif ext.lower() == ".dfxp" or ext.lower() == ".srt" or ext.lower() == ".xml":
             os.rename(window.filename, base + ".txt")
             file_label.configure(text=base + ".txt")
             window.filename = base + ".txt"
